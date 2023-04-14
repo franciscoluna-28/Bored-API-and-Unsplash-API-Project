@@ -1,0 +1,47 @@
+# Dependencias instaladas
+node_modules/
+
+# Archivos de registro
+logs/
+*.log
+
+# Archivos generados por el sistema
+.DS_Store
+Thumbs.db
+
+# Archivos de configuración
+config.js
+
+# Archivos de compilación
+dist/
+build/
+out/
+public/assets/
+
+# Archivos de caché
+*.swp
+*.swo
+*.swx
+
+# Archivos de respaldo
+*~
+*.bak
+*.backup
+*.save
+
+# Archivos de entorno
+.env
+.env.local
+.env.*.local
+.env.test
+.env.production
+.env.development
+.env.staging
+
+# Archivos de seguridad
+*.pem
+*.key
+*.key.pub
+
+# Archivos de subida
+uploads/
