@@ -1,26 +1,24 @@
-import axios from "axios"
 import dotenv from 'dotenv'
+/* import { getUnsplashImage } from './services/Image,' */
+import { getActivity } from './services/Activity'
+import { getBestKeyword } from './services/Helpers/KeywordExtractor'
 
 // Setting up environment variables
 dotenv.config()
 
-// Environment variables
-const unsplashAccessKey = process.env.UNSPLASH_ACCESS_KEY
+/* getUnsplashImage().then(res => console.log(res))
+  .catch(err => console.log(err)) */
 
-// Testing bored API
-axios.get('https://www.boredapi.com/api/activity/')
-  .then(response => {
-    console.log(response.data)
-  })
-  .catch(error => {
-    console.log(error)
-  })
+function main (): void {
+  getActivity()
+    .then((activity) => {
+      console.log(`Activity: ${activity.activity}`)
+      const keyword = getBestKeyword(activity)
+      console.log(`Best keyword: ${keyword}`)
+    })
+    .catch((error) => {
+      console.log(error)
+    })
+}
 
-// Testing unsplash API
-axios.get(`https://api.unsplash.com/photos/random?client_id=${unsplashAccessKey}`)
-  .then(response => {
-    console.log(response.data)
-  })
-  .catch(error => {
-    console.log(error)
-  })
+main()
