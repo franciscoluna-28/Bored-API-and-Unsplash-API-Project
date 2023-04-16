@@ -1,24 +1,12 @@
-import dotenv from 'dotenv'
-/* import { getUnsplashImage } from './services/Image,' */
-import { getActivity } from './services/Activity'
-import { getBestKeyword } from './services/Helpers/KeywordExtractor'
+import app from './server'
 
-// Setting up environment variables
-dotenv.config()
+const port = 3000
 
-/* getUnsplashImage().then(res => console.log(res))
-  .catch(err => console.log(err)) */
-
-function main (): void {
-  getActivity()
-    .then((activity) => {
-      console.log(`Activity: ${activity.activity}`)
-      const keyword = getBestKeyword(activity)
-      console.log(`Best keyword: ${keyword}`)
-    })
-    .catch((error) => {
-      console.log(error)
-    })
-}
-
-main()
+// Listening on port 3000
+app.listen(port, () => {
+  if (port != null) {
+    console.log(`Server listening at http://localhost:${port}`)
+  } else {
+    console.log('Invalid server port!')
+  }
+})
