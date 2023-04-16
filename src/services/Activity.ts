@@ -1,6 +1,7 @@
 import axios from 'axios'
 import { Activity } from '../routes/types'
 
+// Getting an activity from Bored API
 export async function getActivity (): Promise<Activity> {
   try {
     const response = await axios.get<Activity>('https://www.boredapi.com/api/activity/')
