@@ -1,10 +1,10 @@
 import { getActivity } from '../services/Activity'
 import { getUnsplashImage } from '../services/Image'
-import { getBestKeyword } from '../services/Helpers/KeywordExtractor'
-/* import { UnsplashImage } from '../routes/types' */
+import { getBestKeyword } from '../services/helpers/KeywordExtractor'
+import { CustomActivity } from '../routes/types'
 
-// Get random image from keyword
-export async function getRandomActivityWithImage (): Promise<void> {
+// Get random activity with an image from Unsplash
+export async function getRandomActivityWithImage (): Promise<CustomActivity> {
   try {
     const activity = await getActivity()
     console.log(`Activity: ${activity.activity}`)
@@ -18,7 +18,15 @@ export async function getRandomActivityWithImage (): Promise<void> {
     } else {
       console.log('Image URL not found')
     }
+
+    const customActivity: CustomActivity = {
+      ...activity,
+      image
+    }
+
+    return customActivity
   } catch (error) {
     console.log(error)
+    throw error
   }
 }
