@@ -1,6 +1,6 @@
 import { getActivity } from '../services/Activity'
 import { getUnsplashImage } from '../services/Image'
-import { getBestKeyword } from '../services/helpers/KeywordExtractor'
+import { getBestKeyword } from '../services/Helpers/KeywordExtractor'
 import { CustomActivity } from '../routes/types'
 
 // Get random activity with an image from Unsplash
