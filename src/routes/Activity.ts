@@ -18,7 +18,7 @@ router.get('/get-activity', async (_req: Request, res: Response): Promise<void> 
 router.get('/get-a-few-activities', async (_req: Request, res: Response): Promise<void> => {
   try {
     const activitiesWithImages: CustomActivity[] = []
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 2; i++) {
       const activityWithImage = await getRandomActivityWithImage()
       activitiesWithImages.push(activityWithImage)
     }
