@@ -12,7 +12,7 @@ export function getBestKeyword (activity: Activity): string {
   // Dividing the activity into words and ignoring stopwords (tokenizing)
   const tokenizer = new natural.RegexpTokenizer({ pattern: / / })
   const tokens = tokenizer.tokenize(activity.activity.toLowerCase())
-  const filteredTokens = stopword.removeStopwords(tokens, stopword.en)
+  const filteredTokens = stopword.removeStopwords(tokens, stopword.eng)
 
   // Filtering the obtained tokens
   const tagger = new natural.BrillPOSTagger(lexicon, ruleSet)
