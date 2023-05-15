@@ -1,4 +1,3 @@
-
 export type Accessibility = ' ' | number
 
 //  TODO We need to make validations for the type of
