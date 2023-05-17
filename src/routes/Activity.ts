@@ -15,6 +15,20 @@ router.get('/get-activity', async (_req: Request, res: Response): Promise<void> 
   }
 })
 
+// Get a random activity with an image from Unsplash
+router.get('/get-activity-by-type/:type', async (req: Request, res: Response): Promise<void> => {
+  try {
+    const { type } = req.params;
+    const activityWithImage = await getRandomActivityWithImage(type);
+    res.status(200).json({ message: 'Random activity with image successfully retrieved!', data: activityWithImage });
+  } catch (error: any) {
+    console.error(error);
+    res.status(500).json({ message: 'Error retrieving random activity with image' });
+  }
+});
+
+
+// Get 2 activites with an image from Unsplash
 router.get('/get-a-few-activities', async (_req: Request, res: Response): Promise<void> => {
   try {
     const activitiesWithImages: CustomActivity[] = []
@@ -77,6 +91,11 @@ router.get('/get-a-few-activities', async (_req: Request, res: Response): Promis
     console.error(error)
     res.status(500).json({ message: 'Error retrieving random activities with images' })
   }
-})
+}
 
-export default router
+
+
+)
+
+
+export default router;
