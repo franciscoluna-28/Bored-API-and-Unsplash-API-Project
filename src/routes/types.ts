@@ -50,3 +50,8 @@ export interface UnsplashImage {
 export interface CustomActivity extends Activity {
   image?: UnsplashImage
 }
+
+// WIP
+const test = () => {
+
+}
