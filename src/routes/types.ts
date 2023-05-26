@@ -53,5 +53,5 @@ export interface CustomActivity extends Activity {
 
 // WIP
 const test = () => {
-
+  console.log("I'm uuploading the changes in the Frontend tomorrow though...")
 }
